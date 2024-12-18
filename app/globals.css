@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@liveblocks/react-ui/styles.css';
-@import '@liveblocks/react-lexical/styles.css';
+@import "@liveblocks/react-ui/styles.css";
+@import "@liveblocks/react-lexical/styles.css";
 
-@import '../styles/dark-theme.css';
+@import "../styles/dark-theme.css";
 
 /* ========================================== TAILWIND STYLES */
 @layer base {
@@ -30,7 +30,25 @@
     border-radius: 50px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2e3d5b;
+    border-radius: 50px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
     background: #7878a3;
   }
 }
@@ -111,7 +129,7 @@
   }
 
   .document-title-input {
-    @apply min-w-[78px] flex-1 border-none bg-transparent px-0 text-left text-base font-semibold leading-[24px] focus-visible:ring-0 focus-visible:ring-offset-0 disabled:text-black sm:text-xl md:text-center !important;
+    @apply min-w-[78px] border-none bg-transparent px-0 text-left text-base font-semibold leading-[24px] focus-visible:ring-0 focus-visible:ring-offset-0 disabled:text-black sm:text-xl md:text-center !important;
   }
 
   .document-title {
@@ -201,12 +219,7 @@
 }
 
 .cl-logoBox {
-  height: 64px;
-}
-
-.cl-userButtonPopoverMain,
-.cl-userButtonPopoverFooter {
-  background: #0b1527;
+  height: 52px;
 }
 
 /* ======================== Liveblocks Override */
@@ -228,19 +241,19 @@
   --lb-foreground-moderate: #fff;
 }
 
-.lb-button:where([data-variant='primary']) {
+.lb-button:where([data-variant="primary"]) {
   background-color: #161e30;
   color: #b4c6ee;
   padding: 8px;
 }
 
 .lb-button:where(
-    [data-variant='default']:not(
+    [data-variant="default"]:not(
         :is(
             :enabled:hover,
             :enabled:focus-visible,
-            [aria-expanded='true'],
-            [aria-selected='true']
+            [aria-expanded="true"],
+            [aria-selected="true"]
           )
       )
   ) {
@@ -250,8 +263,8 @@
 .lb-button:where(
     :enabled:hover,
     :enabled:focus-visible,
-    [aria-expanded='true'],
-    [aria-selected='true']
+    [aria-expanded="true"],
+    [aria-selected="true"]
   ) {
   --lb-button-background: #161e30;
 
@@ -285,10 +298,7 @@
 .lb-lexical-mention-suggestion-user,
 .lb-composer-suggestions-list-item,
 .lb-inbox-notification-date,
-.lb-comment-author,
-.lb-emoji-picker-search-icon,
-.lb-emoji-picker-category-header-title,
-.lb-emoji-picker-search::placeholder {
+.lb-comment-author {
   color: #b4c6ee;
 }
 

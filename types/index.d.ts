@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 declare type SearchParamProps = {
-  params: { [key: string]: string };
+  params: Promise<{ [key: string]: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
@@ -22,11 +22,11 @@ declare type CreateDocumentParams = {
 };
 
 declare type User = {
-  id: string;
-  name: string;
-  email: string;
-  avatar: string;
-  color: string;
+  id?: string;
+  name?: string;
+  email?: string;
+  avatar?: string;
+  color?: string;
   userType?: UserType;
 };
 
