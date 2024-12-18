@@ -39,30 +39,40 @@ const Home = async () => {
             />
           </div>
           <ul className="document-ul">
-            {roomDocuments.data.map(({ id, metadata, createdAt }: any) => (
-              <li key={id} className="document-list-item">
-                <Link
-                  href={`/documents/${id}`}
-                  className="flex flex-1 items-center gap-4"
-                >
-                  <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
-                    <Image
-                      src="/assets/icons/doc.svg"
-                      alt="file"
-                      width={40}
-                      height={40}
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="line-clamp-1 text-lg">{metadata.title}</p>
-                    <p className="text-sm font-light text-blue-100">
-                      Created about {dateConverter(createdAt)}
-                    </p>
-                  </div>
-                </Link>
-                <DeleteModal roomId={id} />
-              </li>
-            ))}
+            {roomDocuments.data.map(
+              ({
+                id,
+                metadata,
+                createdAt,
+              }: {
+                id: string;
+                createdAt: Date;
+                metadata: object;
+              }) => (
+                <li key={id} className="document-list-item">
+                  <Link
+                    href={`/documents/${id}`}
+                    className="flex flex-1 items-center gap-4"
+                  >
+                    <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
+                      <Image
+                        src="/assets/icons/doc.svg"
+                        alt="file"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="line-clamp-1 text-lg">{metadata.title}</p>
+                      <p className="text-sm font-light text-blue-100">
+                        Created about {dateConverter(createdAt)}
+                      </p>
+                    </div>
+                  </Link>
+                  <DeleteModal roomId={id} />
+                </li>
+              )
+            )}
           </ul>
         </div>
       ) : (
